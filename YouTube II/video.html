@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./youtube.css">
+    <style>
+        #frame {
+            margin: auto;
+            width: 70%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(100, 100, 100);
+            margin-top: 20px;
+            background-color: black;
+        }
+
+        iframe {
+            height: 90%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <img src="./youtube white.png" />
+        <div id="searchBar">
+            <input type="text" id="query" placeholder="Search">
+            <button onclick="search()"><span class="material-symbols-sharp">search</span></button>
+        </div>
+        <div id="icons">
+            <div id="mic"><span class="material-symbols-outlined">
+                    mic
+                </span></div>
+            <div id="othericons">
+                <div id="createVideo"><span class="material-symbols-outlined">
+                        video_call
+                    </span></div>
+                <div id="appIcon"><span class="material-symbols-outlined">
+                        apps
+                    </span></div>
+                <div id="notificationIcon"><span class="material-symbols-outlined">
+                        notifications
+                    </span></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="frame">
+        <iframe title="YouTube video player" frameborder="0" id="IFrame"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+</body>
+
+</html>
+<script>
+
+    let VID = JSON.parse(localStorage.getItem("videoID"));
+
+    document.getElementById("IFrame").src = "https://www.youtube.com/embed/" + VID.id;
+
+    let search = () => {
+        window.location = "./index.html";
+    }
+</script>
